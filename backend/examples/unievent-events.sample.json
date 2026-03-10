@@ -1,0 +1,23 @@
+{
+  "source": "kudago-live",
+  "fetchedAt": "2026-03-10T07:45:00.000Z",
+  "count": 1,
+  "events": [
+    {
+      "id": "12345",
+      "title": "Robotics Club Demo Day",
+      "date": "2026-02-13T16:20:00.000Z",
+      "venue": "Engineering Atrium",
+      "description": "See autonomous bots built by students.",
+      "image": "https://images.example.com/robotics.jpg",
+      "imageStorage": {
+        "strategy": "external-url",
+        "s3Bucket": "unievent-media",
+        "s3Region": "us-east-1",
+        "s3Key": "events/12345.jpg",
+        "s3Url": "https://unievent-media.s3.us-east-1.amazonaws.com/events/12345.jpg"
+      },
+      "sourceUrl": "https://kudago.com/event/robotics-demo"
+    }
+  ]
+}

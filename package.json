@@ -1,0 +1,11 @@
+{
+  "name": "unievent-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start:backend": "node backend/server.js",
+    "start:frontend": "python3 -m http.server 4173",
+    "check": "node --check backend/server.js && node --check backend/services/eventsService.js && node --check js/app.js && node --check js/services/eventsApi.js && node --check js/threeScene.js"
+  }
+}

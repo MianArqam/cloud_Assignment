@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="UniEvent Planner - Discover and plan university events with a modern glass-style experience"
+    />
+    <title>UniEvent Planner</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dark">
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+    <div class="bg-orb orb-3" aria-hidden="true"></div>
+
+    <div class="app-shell">
+      <header class="navbar glass">
+        <div class="brand"><span>✨</span><span>UniEvent Planner</span></div>
+
+        <div class="nav-actions">
+          <input
+            id="searchInput"
+            type="search"
+            class="search-input"
+            placeholder="Search events, clubs, venues..."
+            aria-label="Search events"
+          />
+          <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">☀️</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero glass">
+          <div class="hero-visual">
+            <canvas id="heroCanvas" aria-hidden="true"></canvas>
+          </div>
+          <div class="hero-content">
+          <div class="hero-badge">Student Event Discovery</div>
+          <h1>Your campus social calendar, reimagined.</h1>
+          <p>
+            Find the best student events, workshops, fests, competitions, and communities — all in one planner.
+          </p>
+          <div class="hero-stats">
+            <span id="totalEventsCount">0 events live</span>
+            <span>Search + filter</span>
+            <span>Fresh updates every 2 min</span>
+          </div>
+          </div>
+        </section>
+
+        <section class="controls glass">
+          <select id="dateFilter" class="filter-select" aria-label="Filter by date">
+            <option value="all">All dates</option>
+            <option value="today">Today</option>
+            <option value="week">This week</option>
+            <option value="month">This month</option>
+          </select>
+          <button id="refreshBtn" class="refresh-btn" type="button">Refresh</button>
+        </section>
+
+        <section id="loader" class="loader-wrap" role="status" aria-live="polite">
+          <div class="loader"></div>
+          <p>Loading campus events...</p>
+        </section>
+
+        <section id="eventsGrid" class="events-grid" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <div id="eventModalOverlay" class="modal-overlay hidden" role="dialog" aria-modal="true">
+      <section id="eventModal" class="modal glass" tabindex="-1"></section>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
