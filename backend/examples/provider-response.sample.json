@@ -1,0 +1,20 @@
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "id": 12345,
+      "title": "Robotics Club Demo Day",
+      "description": "<p>See autonomous bots built by students.</p>",
+      "dates": [
+        { "start": 1771002000 }
+      ],
+      "place": { "title": "Engineering Atrium" },
+      "images": [
+        { "image": "https://images.example.com/robotics.jpg" }
+      ],
+      "site_url": "https://kudago.com/event/robotics-demo"
+    }
+  ]
+}
