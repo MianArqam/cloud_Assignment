@@ -8,14 +8,22 @@
       content="UniEvent - Gen-Z style university event discovery platform"
     />
     <title>UniEvent</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="dark">
     <div class="app-shell">
       <header class="navbar glass">
         <div class="brand"><span>🎓</span><span>UniEvent</span></div>
+
         <div class="nav-actions">
-          <input id="searchInput" type="search" class="search-input" placeholder="Search events, clubs, venues..." />
+          <input
+            id="searchInput"
+            type="search"
+            class="search-input"
+            placeholder="Search events, clubs, venues..."
+            aria-label="Search events"
+          />
           <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">☀️</button>
         </div>
       </header>
@@ -29,9 +37,19 @@
           </p>
           <div class="hero-stats">
             <span id="totalEventsCount">0 live events</span>
-            <span>Real-time updates</span>
+            <span>Auto-refresh every 2 min</span>
             <span>Ready for AWS scale</span>
           </div>
+        </section>
+
+        <section class="controls glass">
+          <select id="dateFilter" class="filter-select" aria-label="Filter by date">
+            <option value="all">All dates</option>
+            <option value="today">Today</option>
+            <option value="week">This week</option>
+            <option value="month">This month</option>
+          </select>
+          <button id="refreshBtn" class="refresh-btn" type="button">Refresh now</button>
         </section>
 
         <section id="loader" class="loader-wrap" role="status" aria-live="polite">
@@ -44,7 +62,7 @@
     </div>
 
     <div id="eventModalOverlay" class="modal-overlay hidden" role="dialog" aria-modal="true">
-      <section id="eventModal" class="modal"></section>
+      <section id="eventModal" class="modal" tabindex="-1"></section>
     </div>
 
     <script type="module" src="js/app.js"></script>
