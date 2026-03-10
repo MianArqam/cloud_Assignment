@@ -1,3 +1,4 @@
+import { initThreeHero } from './threeScene.js';
 import { fetchEvents } from './services/eventsApi.js';
 
 const REFRESH_INTERVAL_MS = 120000;
@@ -13,6 +14,7 @@ const modalOverlay = document.getElementById('eventModalOverlay');
 const modal = document.getElementById('eventModal');
 const dateFilter = document.getElementById('dateFilter');
 const refreshBtn = document.getElementById('refreshBtn');
+const heroCanvas = document.getElementById('heroCanvas');
 
 const fmtShort = (date) =>
   new Date(date).toLocaleString([], {
@@ -167,5 +169,11 @@ if (savedTheme === 'light') {
   themeToggle.textContent = '🌙';
 }
 
+const destroyThree = initThreeHero(heroCanvas);
+
 await loadEvents();
 setInterval(loadEvents, REFRESH_INTERVAL_MS);
+
+window.addEventListener('beforeunload', () => {
+  destroyThree();
+});

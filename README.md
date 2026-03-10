@@ -11,6 +11,7 @@ cloud_Assignment/
 ├── health.html
 ├── js/
 │   ├── app.js
+│   ├── threeScene.js
 │   ├── data/
 │   │   └── fallbackEvents.js
 │   └── services/
@@ -24,6 +25,7 @@ cloud_Assignment/
 ## Features
 
 - Modern glass-style UI inspired by contemporary landing pages
+- Interactive Three.js hero animation (mouse-reactive 3D scene)
 - Responsive navbar with search
 - Hero section with quick stats
 - Event cards with hover animation
@@ -32,6 +34,11 @@ cloud_Assignment/
 - Date filters (today / this week / this month)
 - Manual refresh + automatic refresh every 2 minutes
 - External API fetch with local fallback dataset
+
+## Interactivity
+
+- `js/threeScene.js` renders a realtime 3D glassy knot scene in the hero section using Three.js from CDN.
+- Scene responds to pointer movement and adapts to viewport resize.
 
 ## API Integration
 
